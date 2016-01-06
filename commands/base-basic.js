@@ -1,5 +1,7 @@
 /*
-	Basic Commands
+	Comandos Basicos
+*
+*   NO TOCAR SIN SABER COMO EDITAR
 */
 
 Settings.addPermissions(['say']);
@@ -8,12 +10,12 @@ exports.commands = {
 	credits: 'about',
 	bot: 'about',
 	about: function () {
-		this.restrictReply(this.trad('about') + ". " + this.trad('author') + ": " + Settings.package.author.name + ". (" + Settings.package.homepage + ")", 'info');
+		this.restrictReply('Hola, soy __' + this.botName + '__ un bot creado y programado por **Missiingno**, si presento algun problema o fallo contactarlo a el.');
 	},
 
 	git: 'github',
 	github: function () {
-		if (Settings.package.repository) this.restrictReply(Tools.stripCommands(Settings.package.repository.url), 'info');
+		this.restrictReply('No estas autorizado para recibir esta informacion');
 	},
 
 	botversion: 'version',
@@ -24,7 +26,7 @@ exports.commands = {
 	guide: 'help',
 	botguide: 'help',
 	help: function () {
-		this.restrictReply(this.trad('guide') + ': ' + (Config.botguide || (Settings.package.homepage + "/blob/master/commands/README.md")), 'info');
+		this.restrictReply(this.trad('guide') + ': ' + (Config.botguide), 'info');
 	},
 
 	bottime: 'time',
@@ -35,7 +37,7 @@ exports.commands = {
 
 	uptime: function () {
 		var text = '';
-		text += '**Uptime:** ';
+		text += '**Tiempo en linea:** ';
 		var divisors = [52, 7, 24, 60, 60];
 		var units = [this.trad('week'), this.trad('day'), this.trad('hour'), this.trad('minute'), this.trad('second')];
 		var buffer = [];
