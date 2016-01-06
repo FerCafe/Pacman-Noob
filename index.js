@@ -14,13 +14,13 @@ try {
 	global.PSClient = require('node-ps-client');
 } catch (e) {
 	console.log(e.stack);
-	console.log("ERROR: missing dependencies, try 'npm install'");
+	console.log("ERROR: No se encontraron dependencias instaladas, intenta hacer primero 'npm install'");
 	process.exit(-1);
 }
 
 console.log((
 	'-----------------------------------------------\n' +
-	'   Welcome to Pokemon Showdown Bot for Node!   \n' +
+	'     Iniciando Bot para clanes de Pandora!   \n' +
 	'-----------------------------------------------\n'
 ).yellow);
 

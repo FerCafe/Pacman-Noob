@@ -16,15 +16,15 @@ var rl = readline.createInterface({
 });
 
 function askUrl () {
-	rl.question("Client url for server (example.psim.us): ", function(serverUrl) {
+	rl.question("Escribe la URL del servidor (pandora.psim.us): ", function(serverUrl) {
 		if (serverUrl.indexOf('://') !== -1) {
 			serverUrl = url.parse(serverUrl).host;
 		}
 		if (serverUrl.slice(-1) === '/') {
 			serverUrl = serverUrl.slice(0, -1);
 		}
-		console.log('Getting data for ' + serverUrl + '...');
-		console.log('This may take some time, depending on Showdown\'s speed.');
+		console.log('Buscando datos de ' + serverUrl + '...');
+		console.log('Esto puede tardar unos segundos....');
 		var received = false;
 		var requestOptions = {
 			hostname: 'play.pokemonshowdown.com',
@@ -58,6 +58,7 @@ function askUrl () {
 							break;
 						}
 					}
+					console.log('Se encontraron los siguientes datos:');
 					console.log('---------------');
 					console.log('server: ' + data.host);
 					console.log('port: ' + data.port);
@@ -65,7 +66,7 @@ function askUrl () {
 					console.log('---------------\n');
 					writeConfig(data.host, data.port, data.id);
 				} else {
-					console.log('ERROR: failed to get data!');
+					console.log('ERROR: No se encontraron datos!');
 					rl.close();
 					process.exit(-1);
 				}
@@ -88,15 +89,15 @@ function askUrl () {
 }
 
 function writeConfig (server, port, serverid) {
-	rl.question("Do you want to write this in config.js? (yes, no): ", function(answer) {
+	rl.question("Se creara el archivo config.js con los datos encontrados. ¿Estas seguro de hacer esto? (si,no): ", function(answer) {
 		answer = answer.toLowerCase().replace(/[^a-z0-9]/g, '');
 		if (answer in {'no': 1, 'n': 1}) {
 			rl.close();
 			return process.exit();
 		}
-		if (answer in {'yes': 1, 'y': 1}) {
+		if (answer in {'si': 1, 'y': 1}) {
 			if (!fs.existsSync('./config.js')) {
-				console.log("config.js does not exist - creating one with default settings...");
+				console.log("El archivo config.js no existe... Se creara uno con los datos del actual config-example.js...");
 				fs.writeFileSync('./config.js', fs.readFileSync('./config-example.js'));
 			}
 			var conf = fs.readFileSync('./config.js').toString().split('\n');
@@ -121,7 +122,7 @@ function writeConfig (server, port, serverid) {
 			if (!status.port) conf.unshift("exports.port = " + port + ";");
 			if (!status.serverid) conf.unshift("exports.serverid = '" + serverid + "';");
 			fs.writeFileSync('./config.js', conf.join('\n'));
-			console.log("Done!".green + "\t" + "successfully created default config");
+			console.log("Listo!".green + "\t" + "el archivo config.js ha sido creado con exito");
 			rl.close();
 			return process.exit();
 		}
@@ -131,7 +132,7 @@ function writeConfig (server, port, serverid) {
 
 console.log((
 	"\n-------------------------------------------\n" +
-	"    Configure your Pokemon Showdown Bot    \n" +
+	"         Configuración de tu Bot    \n" +
 	"-------------------------------------------\n"
 ).yellow);
 
