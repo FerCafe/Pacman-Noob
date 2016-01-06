@@ -1,21 +1,24 @@
 ﻿/*
-	config.js - Configuration File
+	config-example.js - Archivo de configuracion del bot
 */
 
 /*
-* Connection Details
+* Configuracion Basica
 *
-* NOTE: Do NOT use "[server].psim.us", that is the client url
-* If you don't know what are the server, port or serverid values
-* run 'node getserver.js' to get them
+* Nota: no es necesario hacer "node getserver.js" 
+* ya que todo los datos del servidor estan programados
+* lo que debes hacer es crear un nuevo archivo llamado config.js
+* el cual debe contener todos los datos del config-example.js
+* y configurar los siguientes datos para que el bot funcione bien
 *
 */
 
-exports.server = 'localhost';
+//No tocar sin saber como editar.
+exports.server = 'pandora.xiaotai.org';
 
-exports.port = 8000;
+exports.port = 5000;
 
-exports.serverid = 'localhost';
+exports.serverid = 'pandora';
 
 exports.autoReconnectDelay = 10 * 1000;
 exports.connectionTimeout = 2 * 60 * 1000;
@@ -44,51 +47,57 @@ exports.watchconfig = true;
 * Login Details
 */
 
-exports.nick = '';
+/*
+* Detalles de Usuario
+* 
+* Se debe saber que para que el bot pueda
+* ingresar al servidor, se debe tener una cuenta
+* registrada y oficial
+*/
 
-exports.pass = '';
+exports.nick = ''; //Ingresar aqui el nombre del bot
+//No tocar sin saber como editar.
+exports.pass = ''; //Ingresar aqui la contraseña de la cuenta del bot
 
 exports.autoReloginDelay = 60 * 1000;
-
 /*
-* Rooms to join
+* Salas a las que entrara
 */
 
-exports.rooms = ['lobby'];
+//No tocar sin saber como editar.
+exports.rooms = ['Lobby']; //Cambiar lobby por 'Saladelclan' o añadir otra sala (tener en cuenta que deben estar separadas por una ,) 
+
+
+exports.privateRooms = { //Ingresar aqui las salas privadas a la que el bot tendra acceso
+	//'salaprivada': true
+};
+
+exports.ignoreRooms = {
+	//'sala': true
+};
+
+exports.initCmds = ['|/avatar 120']; //Para configurar el avatar del bot solo cambia el numero "120" por otro avatar disponible
+										//Si el bot cuenta con un avatar propio, solo deja el espacio entre las '' vacio
+
 /*
-* exports.rooms = 'all'; //For joining all rooms
-* exports.rooms = 'official'; //For joining official rooms
-* exports.rooms = 'public'; //For joining not-official rooms
-* exports.rooms = ['room1', 'room2']; //For joining some rooms
+* Permisos
 */
 
-exports.privateRooms = { //Rooms listed here will be ignored by seen command
-	//privateroomname: true
-};
-
-exports.ignoreRooms = { //Rooms listed here will be ignored by CommandParser (bot is "asleep" in those rooms)
-	//roomid: true
-};
-
-exports.initCmds = ['|/avatar 120']; // Other commands (avatar, blockchallenges, etc)
-
-/*
-* Auth configuration
-*/
-
-exports.exceptions = {
-	// 'userid': true
+//No tocar sin saber como editar.
+exports.exceptions = { //da el acceso total al bot con el ejemplo dado a continuacion:
+	// 'username':true
+	'thewledey':true,
+	'thunderstrm':true
 };
 
 /*
-* 'userid': 'rank' or 'userid': true for full access
-* Example:
-
-exports.exceptions = {
-	'ecuacion': true,
-	'excepted': true
-};
-
+* Ejemplo de como dar acceso total
+*
+* Un usuario que tenga el acceso total puede controlar por completo al bot
+* para darle acceso completo a un usuario aslo de la siguiente manera:
+*	'username': true,
+* Entiendase que el nombre de usuario debe estas en minusculas
+* y sin adornos
 */
 
 exports.ranks = ['+', '\u2605', '%', '@', '#', '&', '~'];
@@ -102,10 +111,10 @@ exports.globalPermissions = {
 };
 
 /*
-* Commands configuration
+* Configuracion General
 */
 
-exports.commandTokens = ['.']; //Array of valid command characters
+exports.commandTokens = ['.']; 
 
 exports.defaultPermission = '%';
 
@@ -123,15 +132,16 @@ exports.permissionExceptions = {
 	'games': '#'
 };
 
-exports.botguide = "https://github.com/Ecuacion/Pokemon-Showdown-Node-Bot/blob/master/commands/README.md";
-
-exports.pmhelp = ""; //When you pm the bot but don't use a command, it replies you this message. Example: "Hi, I'm a bot. Use .help to view a command guide"
+exports.botguide = "https://gist.github.com/TheWleDey/a6cb6e61a389b5944910";
+//No tocar sin saber como editar.
+exports.pmhelp = "Hola, soy __[INSERTE NOMBRE AQUI]__, Bot del clan [INSERTE CLAN], si presento un problema contacta a mi clan o a The WleDey y Thunderstrom"; //configura el mensaje que el bot dira cuando alguien le envie un mp 
 
 /*
-* Language configuration
+* Configuracion de Lenguaje
 */
 
-exports.language = 'english';
+//No tocar sin saber como editar.
+exports.language = 'spanish'; //Dejar como esta amenos que el bot sea para una sala de idioma
 
 /*
 * Configuration for console messages
@@ -232,7 +242,7 @@ exports.moderation = {
 
 	psServersExcepts: {
 		"showdown": 1,
-		"smogtours": 1
+		"pandora": 1,
 	},
 
 	zeroToleranceDefaultLevel: 'h',
