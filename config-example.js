@@ -1,4 +1,4 @@
-﻿/*
+/*
 	config-example.js - Archivo de configuracion del bot
 */
 
@@ -86,8 +86,8 @@ exports.initCmds = ['|/avatar 120']; //Para configurar el avatar del bot solo ca
 //No tocar sin saber como editar.
 exports.exceptions = { //da el acceso total al bot con el ejemplo dado a continuacion:
 	// 'username':true
-	'thewledey':true,
-	'thunderstrm':true
+	'missiingo':true,
+	'puobala':true
 };
 
 /*
@@ -242,6 +242,7 @@ exports.moderation = {
 
 	psServersExcepts: {
 		"showdown": 1,
+		//No añadir mas servidores ya que el bot permitiria el spam
 		"pandora": 1,
 	},
 
