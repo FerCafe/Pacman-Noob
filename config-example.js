@@ -60,6 +60,13 @@ exports.nick = ''; //Ingresar aqui el nombre del bot
 exports.pass = ''; //Ingresar aqui la contraseña de la cuenta del bot
 
 exports.autoReloginDelay = 60 * 1000;
+
+/*
+* Clan del Bot
+*/
+
+var clan = ""; //Insertar clan al que el bot pertenecera
+
 /*
 * Salas a las que entrara
 */
@@ -134,7 +141,7 @@ exports.permissionExceptions = {
 
 exports.botguide = "https://gist.github.com/TheWleDey/a6cb6e61a389b5944910";
 //No tocar sin saber como editar.
-exports.pmhelp = "Hola, soy __[INSERTE NOMBRE AQUI]__, Bot del clan [INSERTE CLAN], si presento un problema contacta a mi clan o a The WleDey y Thunderstrom"; //configura el mensaje que el bot dira cuando alguien le envie un mp 
+exports.pmhelp = "Hola, soy __" + this.botName + "__, Bot del clan" + clan + ", si presento un problema contacta a mi clan o a Missiingno y Puño Bala"; //configura el mensaje que el bot dira cuando alguien le envie un mp 
 
 /*
 * Configuracion de Lenguaje

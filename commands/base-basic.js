@@ -10,7 +10,7 @@ exports.commands = {
 	credits: 'about',
 	bot: 'about',
 	about: function () {
-		this.restrictReply('Hola, soy __' + this.botName + '__ un bot creado y programado por **Missiingno**, si presento algun problema o fallo contactarlo a el.');
+		this.restrictReply('Hola, soy __' + this.botName + '__ un bot creado y programado por **Missiingno** y **Puño Bala**, si presento algun problema o fallo contactar con ellos.');
 	},
 
 	git: 'github',
