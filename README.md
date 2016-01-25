@@ -19,7 +19,7 @@ Instalacion rapida:
 --------------------
 
 ```bash
-$ git clone https://github.com/Error-902/Pandora-Bots.git
+$ git clone https://github.com/Missiingno/Pandora-Bots.git
 $ npm install
 $ node index.js
 ```
