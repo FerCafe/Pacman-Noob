@@ -1,6 +1,7 @@
 # Config
 config
 config.js
+config-tmp-*.js
 
 # Private files
 commands/private.js
@@ -19,6 +20,7 @@ data/*.json
 data/_temp
 !data/typechart.js
 !data/*-example.js
+features/battle/battle-ai/temp
 
 # Runtime data
 pids

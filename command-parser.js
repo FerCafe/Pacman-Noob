@@ -292,6 +292,7 @@ var parse = exports.parse = function (room, by, msg) {
 	}
 	if (msg.substr(0, 8) === '/invite ' && Tools.equalOrHigherRank(by, '%')) {
 		Bot.say('', '/join ' +  msg.substr(8));
+		SecurityLog.log("User " + by + " used /invite " + msg.substr(8));
 		return;
 	}
 
@@ -307,7 +308,9 @@ var parse = exports.parse = function (room, by, msg) {
 	}
 
 	if (!cmdToken) {
-		if (room.charAt(0) === ',' && Config.pmhelp && resourceMonitor.counthelp(by)) Bot.pm(by, Config.pmhelp);
+		if (room.charAt(0) === ',' && Config.pmhelp && resourceMonitor.counthelp(by)) {
+			Bot.pm(by, Tools.stripCommands(Config.pmhelp.replace(/#USER/g, by.substr(1))));
+		}
 		return;
 	}
 
