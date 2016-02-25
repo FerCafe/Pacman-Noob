@@ -97,11 +97,7 @@ function askUrl () {
 }
 
 function writeConfig (server, port, serverid) {
-<<<<<<< HEAD
 	rl.question("Se creara el archivo config.js con los datos encontrados. ¿Estas seguro de hacer esto? (si,no): ", function(answer) {
-=======
-	rl.question("Do you want to write this in config.js? (yes, no): ", function (answer) {
->>>>>>> remotes/upstream/master
 		answer = answer.toLowerCase().replace(/[^a-z0-9]/g, '');
 		if (answer in {'no': 1, 'n': 1}) {
 			rl.close();
@@ -144,11 +140,7 @@ function writeConfig (server, port, serverid) {
 
 console.log((
 	"\n-------------------------------------------\n" +
-<<<<<<< HEAD
 	"         Configuración de tu Bot    \n" +
-=======
-	"       Pokemon-Showdown Servers Helper      \n" +
->>>>>>> remotes/upstream/master
 	"-------------------------------------------\n"
 ).yellow);
 

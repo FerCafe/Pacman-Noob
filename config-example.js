@@ -98,7 +98,6 @@ exports.exceptions = { //da el acceso total al bot con el ejemplo dado a continu
 };
 
 /*
-<<<<<<< HEAD
 * Ejemplo de como dar acceso total
 *
 * Un usuario que tenga el acceso total puede controlar por completo al bot
@@ -106,16 +105,6 @@ exports.exceptions = { //da el acceso total al bot con el ejemplo dado a continu
 *	'username': true,
 * Entiendase que el nombre de usuario debe estas en minusculas
 * y sin adornos
-=======
-* 'userid': 'rank' or 'userid': true for full access
-* Example:
-*
-* exports.exceptions = {
-*	'ecuacion': true,
-*	'excepted': true
-* };
-*
->>>>>>> remotes/upstream/master
 */
 
 exports.ranks = ['+', '\u2605', '%', '@', '#', '&', '~'];
@@ -150,17 +139,9 @@ exports.permissionExceptions = {
 	'games': '#'
 };
 
-<<<<<<< HEAD
 exports.botguide = "https://gist.github.com/TheWleDey/a6cb6e61a389b5944910";
 //No tocar sin saber como editar.
 exports.pmhelp = "Hola, soy __" + this.botName + "__, Bot del clan" + clan + ", si presento un problema contacta a mi clan o a Missiingno y Puño Bala"; //configura el mensaje que el bot dira cuando alguien le envie un mp 
-=======
-exports.botguide = "https://github.com/Ecuacion/Pokemon-Showdown-Node-Bot/blob/master/commands/README.md";
-
-//When you pm the bot but don't use a command, it replies you this message. Example: "Hi, I'm a bot. Use .help to view a command guide"
-//The var #USER is replaced with the username that pms it
-exports.pmhelp = "Hi #USER! I am a robot, please PM another staff member if you need help. Command guide: https://github.com/Ecuacion/Pokemon-Showdown-Node-Bot/blob/master/commands/README.md";
->>>>>>> remotes/upstream/master
 
 /*
 * Configuracion de Lenguaje
@@ -270,13 +251,8 @@ exports.moderation = {
 
 	psServersExcepts: {
 		"showdown": 1,
-<<<<<<< HEAD
 		//No añadir mas servidores ya que el bot permitiria el spam
 		"pandora": 1,
-=======
-		"smogtours": 1,
-		"sim": 1
->>>>>>> remotes/upstream/master
 	},
 
 	zeroToleranceDefaultLevel: 'h',
